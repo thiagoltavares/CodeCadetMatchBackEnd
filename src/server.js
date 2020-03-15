@@ -1,6 +1,7 @@
 import express from 'express';
 import mongoose from 'mongoose';
 import routes from './routes';
+import cors from 'cors'
 
 const server = express();
 
@@ -9,7 +10,7 @@ mongoose.connect('mongodb+srv://maha:maha@cluster0-zbn90.mongodb.net/codecadetma
   useUnifiedTopology: true
 });
 
-
+server.use(cors());
 server.use(express.json());
 server.use(routes);
 
