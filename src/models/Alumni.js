@@ -18,7 +18,15 @@ const AlumniSchema = new Schema({
   avatar: {
     type: String,
     required: true,
-  }
+  },
+  likes: [{
+    type: Schema.Types.ObjectId,
+    ref: 'alumni'
+  }],
+  dislikes: [{
+    type: Schema.Types.ObjectId,
+    ref: 'alumni'
+  }],
 }, {
   timestamps: true,
 });
